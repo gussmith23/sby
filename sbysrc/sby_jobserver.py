@@ -139,11 +139,10 @@ class SbyJobLease:
         self.is_done = False
 
     def done(self):
-        if self.is_done:
-            return
-        self.is_done = True
-        if self.is_ready:
-            self.client.return_lease()
+        if not self.is_done:
+            self.is_done = True
+            if self.is_ready:
+                self.client.return_lease()
 
     def __repr__(self):
         return f"is_ready={self.is_ready} is_done={self.is_done}"
