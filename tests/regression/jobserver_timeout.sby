@@ -4,7 +4,7 @@ timeout 1
 expect timeout
 
 [engines]
-smtbmc bitwuzla
+smtbmc abc
 
 [script]
 read -formal top.v
